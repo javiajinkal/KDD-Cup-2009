@@ -1,0 +1,125 @@
+=== Run information ===
+
+Scheme:weka.classifiers.lazy.IBk -K 10 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     KDD-weka.filters.unsupervised.instance.Randomize-S42-weka.filters.unsupervised.instance.Resample-S1-Z10.0
+Instances:    49402
+Attributes:   42
+              duration
+              protocol_type
+              service
+              flag
+              src_bytes
+              dst_bytes
+              land
+              wrong_fragment
+              urgent
+              hot
+              num_failed_logins
+              logged_in
+              num_compromised
+              root_shell
+              su_attempted
+              num_root
+              num_file_creations
+              num_shells
+              num_access_files
+              num_outbound_cmds
+              is_host_login
+              is_guest_login
+              count
+              srv_count
+              serror_rate
+              srv_serror_rate
+              rerror_rate
+              srv_rerror_rate
+              same_srv_rate
+              diff_srv_rate
+              srv_diff_host_rate
+              dst_host_count
+              dst_host_srv_count
+              dst_host_same_srv_rate
+              dst_host_diff_srv_rate
+              dst_host_same_src_port_rate
+              dst_host_srv_diff_host_rate
+              dst_host_serror_rate
+              dst_host_srv_serror_rate
+              dst_host_rerror_rate
+              dst_host_srv_rerror_rate
+              class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 10 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.06 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       49305               99.8037 %
+Incorrectly Classified Instances        97                0.1963 %
+Kappa statistic                          0.9967
+Mean absolute error                      0.0002
+Root mean squared error                  0.0114
+Relative absolute error                  0.4274 %
+Root relative squared error              7.106  %
+Total Number of Instances            49402     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.997     0.001      0.994     0.997     0.996      1        normal.
+                 0.946     0          0.959     0.946     0.953      0.999    back.
+                 0         0          0         0         0          0.792    buffer_overflow.
+                 0         0          0         0         0          ?        ftp_write.
+                 0         0          0         0         0          1        guess_passwd.
+                 0         0          0         0         0          0.966    imap.
+                 0.969     0          0.977     0.969     0.973      0.998    ipsweep.
+                 0         0          0         0         0          1        land.
+                 0         0          0         0         0          ?        loadmodule.
+                 0         0          0         0         0          0.792    multihop.
+                 1         0          0.999     1         1          1        neptune.
+                 0.724     0          0.955     0.724     0.824      1        nmap.
+                 0         0          0         0         0          0.966    perl.
+                 0         0          0         0         0          ?        phf.
+                 0.882     0          0.909     0.882     0.896      0.99     pod.
+                 0.96      0          0.99      0.96      0.974      0.994    portsweep.
+                 0         0          0         0         0          0.792    rootkit.
+                 0.964     0          0.994     0.964     0.979      0.998    satan.
+                 1         0          1         1         1          1        smurf.
+                 0         0          0         0         0          ?        spy.
+                 1         0          1         1         1          1        teardrop.
+                 0.854     0          0.889     0.854     0.871      0.998    warezclient.
+                 0         0          0         0         0          1        warezmaster.
+Weighted Avg.    0.998     0          0.998     0.998     0.998      1    
+
+=== Confusion Matrix ===
+
+     a     b     c     d     e     f     g     h     i     j     k     l     m     n     o     p     q     r     s     t     u     v     w   <-- classified as
+  9656     9     0     0     0     0     0     0     0     0     1     0     0     0     1     1     0     0     5     0     0    10     0 |     a = normal.
+    12   212     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     b = back.
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0 |     c = buffer_overflow.
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     d = ftp_write.
+     4     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     e = guess_passwd.
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     f = imap.
+     4     0     0     0     0     0   127     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     g = ipsweep.
+     0     0     0     0     0     0     0     0     0     0     3     0     0     0     0     0     0     0     0     0     0     0     0 |     h = land.
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     i = loadmodule.
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     j = multihop.
+     0     0     0     0     0     0     0     0     0     0 10646     0     0     0     0     0     0     0     0     0     0     0     0 |     k = neptune.
+     5     0     0     0     0     0     3     0     0     0     0    21     0     0     0     0     0     0     0     0     0     0     0 |     l = nmap.
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     m = perl.
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     n = phf.
+     4     0     0     0     0     0     0     0     0     0     0     0     0     0    30     0     0     0     0     0     0     0     0 |     o = pod.
+     0     0     0     0     0     0     0     0     0     0     3     0     0     0     0    95     0     1     0     0     0     0     0 |     p = portsweep.
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     q = rootkit.
+     5     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0   162     0     0     0     0     0 |     r = satan.
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     2     0     0     0 28159     0     0     0     0 |     s = smurf.
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     t = spy.
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   109     0     0 |     u = teardrop.
+    15     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    88     0 |     v = warezclient.
+     3     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     w = warezmaster.
+
